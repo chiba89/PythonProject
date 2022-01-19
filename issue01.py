@@ -8,12 +8,13 @@
 # 検索ソース
 # source=["ねずこ","たんじろう","きょうじゅろう","ぎゆう","げんや","かなお","ぜんいつ"]
 import csv
+import pandas as pd
 
-filename = 'CharacterList.csv'
-with open(filename, encoding='utf8', newline='') as f:
-    csvreader = csv.reader(f)
-    for row in csvreader:
-        print(row)
+# filename = 'CharacterList.csv'
+df = pd.read_csv("CharacterList.csv", sep=",",  encoding="utf8")
+source = df['name'].tolist()
+print(source)
+
 ### 検索ツール
 def search():
     word =input("鬼滅の登場人物の名前を入力してください >>> ")
@@ -24,6 +25,8 @@ def search():
     else:
         print("{}が見つかりませんでした".format(word))
         source.append(word)
+        df.loc[word, 'name'] = word
+        df.to_csv('CharacterList.csv',index=False, encoding='utf8')
         print("{}を追加しました".format(word))
         print(source)
 
