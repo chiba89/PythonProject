@@ -6,8 +6,14 @@
 ### これをベースに課題の内容を追記してください
 
 # 検索ソース
-source=["ねずこ","たんじろう","きょうじゅろう","ぎゆう","げんや","かなお","ぜんいつ"]
+# source=["ねずこ","たんじろう","きょうじゅろう","ぎゆう","げんや","かなお","ぜんいつ"]
+import csv
 
+filename = 'CharacterList.csv'
+with open(filename, encoding='utf8', newline='') as f:
+    csvreader = csv.reader(f)
+    for row in csvreader:
+        print(row)
 ### 検索ツール
 def search():
     word =input("鬼滅の登場人物の名前を入力してください >>> ")
