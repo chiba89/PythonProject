@@ -148,22 +148,10 @@ def main():
                     }, 
                     ignore_index=True)
                 
-                
                 print(str(count)+"件目成功")
-                # f = open('log2.txt', 'w', encoding='utf-8-sig')
-                # f.write("{count}件目成功")
-                # f.writelines(str(count)+"件目成功\n")
-                # f.close()
-
-                # datalist = ['お元気ですか？\n', 'それではまた\n']
-
             
             except Exception as e:
                 print(str(count)+"件目失敗")
-                # f = open('log2.txt', 'w', encoding='utf-8-sig')
-                # f.write("{count}件目失敗")
-                # f.writelines(str(count)+"件目失敗\n")
-                # f.close()
             
             finally:
                 count += 1
