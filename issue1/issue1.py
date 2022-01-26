@@ -10,8 +10,8 @@
 import csv
 import pandas as pd
 
-# filename = 'CharacterList.csv'
-df = pd.read_csv("CharacterList.csv", sep=",",  encoding="utf8")
+# filename = 'CharacterList.csv'C:\Users\handb\Desktop\PythonProject\issue1\
+df = pd.read_csv("C:/Users/handb/Desktop/PythonProject/issue1/CharacterList.csv", sep=",",  encoding="utf8")
 source = df['name'].tolist()
 print(source)
 
@@ -26,7 +26,7 @@ def search():
         print("{}が見つかりませんでした".format(word))
         source.append(word)
         df.loc[word, 'name'] = word
-        df.to_csv('CharacterList.csv',index=False, encoding='utf8')
+        df.to_csv("C:/Users/handb/Desktop/PythonProject/issue1/CharacterList.csv",index=False, encoding='utf8')
         print("{}を追加しました".format(word))
         print(source)
 

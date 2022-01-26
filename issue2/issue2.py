@@ -148,25 +148,25 @@ def main():
                     }, 
                     ignore_index=True)
                 
-                print(str(count)+"件目成功")
+                print(f"{count} 件目成功")
             
             except Exception as e:
-                print(str(count)+"件目失敗")
+                print(f"{count} 件目失敗")
             
             finally:
                 count += 1
                 
         nextpage = driver.find_elements(by=By.CSS_SELECTOR,value=".iconFont--arrowLeft")
 
-        if nextpage != []:
-            driver.execute_script("arguments[0].click();", nextpage[0])
-            
+        if nextpage:
+            url = nextpage[0].get_attribute("href")
+            driver.get(url)
         else:
             break
             
     print(df)
     
-    df.to_csv('test2.csv',index=False, encoding='utf-8-sig')
+    df.to_csv('C:/Users/handb/Desktop/PythonProject/issue2/test2.csv',index=False, encoding='utf-8-sig')
 
     # 1ページ分繰り返し
     # print(len(name_elms))
