@@ -2,8 +2,8 @@ import eel
 import desktop
 import search
 
-app_name="C:/Users/handb/Desktop/PythonProject/issue3/html"
-end_point="C:/Users/handb/Desktop/PythonProject/issue3/html/index.html"
+app_name="html"
+end_point="index.html"
 size=(700,600)
 
 @ eel.expose

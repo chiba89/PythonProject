@@ -28,7 +28,6 @@
                 }else{
                     alert("検索開始");
                     const word = document.getElementById("searchword").value;
-                    /*console.log(word);*/
                     eel.kimetsu_search(word);
                     alert("search end");
                 }
@@ -39,6 +38,7 @@
 
             eel.expose(view_log_js)
             function view_log_js(text){
+                document.getElementById("logarea").value += ""
             }
         </script>
     </body>
