@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>eelテスト</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <h2>eelテスト</h2>
+        <!--
+        <label for="検索ワード">検索ワード</label>
+        -->
+            <input type="text" id="searchword" >
+            <input type="submit" value="検索する" onclick="check();">
+        <br>
+        <br>
+        <br>
+            <label >ログ表示エリア</label>
+        <br>
+            <textarea id="logarea" value=eel.expose(view_log_js)
+                rows="5" cols="30">
+            </textarea>
+        
+        <script type="text/javascript" src="./eel.js"></script>
+        <script>
+            function check() {
+                if(document.getElementById("searchword").value == "") {
+                    alert("検索ワードを入力してください");
+                    return false;
+                }else{
+                    view_log_js("alert")
+                    alert("検索開始");
+                    /*const word = document.getElementById("searchword").value;
+                    eel.kimetsu_search(word);*/
+                    alert("search end");
+                }
+            }
+            
+            search.addEventListener('click', () => {
+            })
+
+            eel.expose(view_log_js)
+            function view_log_js(text){
+                document.getElementById("logarea").value += ""
+            }
+        </script>
+    </body>
+</html>
